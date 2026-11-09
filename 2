@@ -1,0 +1,1479 @@
+===== FACE LIST GENERATION =====
+PS D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets>
+PS D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets> Get-ChildItem "$ROOT\scripts" -Recurse -File |
+>>     Select-String -Pattern "rig_face_lists|noseList|upperEyelids|lowerEyelids|faceBonesL|faceBonesR|faceBonesM|brows" |
+>>     Select-Object Path, LineNumber, Line |
+>>     Format-List
+
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\adaptive_density_body.py
+LineNumber : 74
+Line       :                         "UpperEyelids", "LowerEyelids"],   # (b) fnmatch patterns on REGION
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py
+LineNumber : 301
+Line       : STRIP_WET_RX = __import__("re").compile("|".join(_SW)) if _SW else None      # cfg proxy_budget.strip_wet:
+              material-name regexes that lose _ISWET_ON / _ISCOLORED_ON (hair strands, brows, lashes, LEDs, piercings,
+             nails)
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py
+LineNumber : 728
+Line       :     _lash_brow = any(k in _tag for k in ("Eyelash", "Eyebrow", "Lashes", "Brows"))
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py
+LineNumber : 729
+Line       :     if kind == "cutout" and _lash_brow and not _skin_like and CFG.get("lashes_brows_standard_advanced"):
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py
+LineNumber : 730
+Line       :         # zero-loss plan D5-A2 (cfg lashes_brows_standard_advanced = {"queue": 3000, "color": [1, 1, 1, 1]
+             }): eyelashes + eyebrows like EVERY shipped character (akali / queen / asuna / irelia: StandardAdvanced Fa
+             de,
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py
+LineNumber : 733
+Line       :         _ls = CFG["lashes_brows_standard_advanced"]
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py
+LineNumber : 762
+Line       :         elif kind == "cutout":                                 # lashes / brows: Unified alpha clip (hair
+             profile)
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py
+LineNumber : 2121
+Line       :     for ex in CFG.get("extras", []):                                # brows / lashes carry their own corre
+             ctive copies
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py
+LineNumber : 2344
+Line       : # face bone lists (shipped Rig: upperLips 5, lowerLips 5, cornerLips 2, noseList 3, cheeks 2, upper/lowerE
+             yelids 2, brows 7,
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py
+LineNumber : 2345
+Line       : # l/rUpper/LowerEyelid, faceBonesL/R/M = every transform under the head split by side). The mouth/face int
+             eractions move
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py
+LineNumber : 2352
+Line       :               "noseList": ["DEF-Nose.L", "DEF-Nose_Upper", "DEF-Nose.R"],
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py
+LineNumber : 2354
+Line       :               "upperEyelids": ["DEF-eyelid_top_02.l", "DEF-eyelid_top_02.r"],
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py
+LineNumber : 2355
+Line       :               "lowerEyelids": ["DEF-eyelid_bot_02.l", "DEF-eyelid_bot_02.r"],
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py
+LineNumber : 2356
+Line       :               "brows": ["DEF-Eyebrow_01.l", "DEF-Eyebrow_02.l", "DEF-Eyebrow_03.l", "DEF-Eyebrow_01.r", "D
+             EF-Eyebrow_02.r", "DEF-Eyebrow_03.r"]}
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py
+LineNumber : 2382
+Line       : rig_vals["faceBonesL"], rig_vals["faceBonesR"], rig_vals["faceBonesM"] = fb["L"], fb["R"], fb["M"]
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py
+LineNumber : 2383
+Line       : REPORT["rig_face_lists"] = {k: len(v) for k, v in rig_vals.items() if k in FACE_LISTS or k.startswith("fac
+             eBones")}
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py
+LineNumber : 2474
+Line       :     # Never listed: anatomy (hair, eyes, teeth, tongue, brows, lashes) and cfg crosswear_body_features.
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py
+LineNumber : 2476
+Line       :     _XW_ANATOMY_RX = _re.compile(r"^(body_.*|hair.*|eyes?|tongue|teeth.*|eyebrows?|eyelash(es)?|brows?|las
+             hes|mouth|scalp)$",
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py.bak_anran
+LineNumber : 283
+Line       : STRIP_WET_RX = __import__("re").compile("|".join(_SW)) if _SW else None      # cfg proxy_budget.strip_wet:
+              material-name regexes that lose _ISWET_ON / _ISCOLORED_ON (hair strands, brows, lashes, LEDs, piercings,
+             nails)
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py.bak_anran
+LineNumber : 708
+Line       :     _lash_brow = any(k in _tag for k in ("Eyelash", "Eyebrow", "Lashes", "Brows"))
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py.bak_anran
+LineNumber : 709
+Line       :     if kind == "cutout" and _lash_brow and not _skin_like and CFG.get("lashes_brows_standard_advanced"):
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py.bak_anran
+LineNumber : 710
+Line       :         # zero-loss plan D5-A2 (cfg lashes_brows_standard_advanced = {"queue": 3000, "color": [1, 1, 1, 1]
+             }): eyelashes + eyebrows like EVERY shipped character (akali / queen / asuna / irelia: StandardAdvanced Fa
+             de,
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py.bak_anran
+LineNumber : 713
+Line       :         _ls = CFG["lashes_brows_standard_advanced"]
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py.bak_anran
+LineNumber : 742
+Line       :         elif kind == "cutout":                                 # lashes / brows: Unified alpha clip (hair
+             profile)
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py.bak_anran
+LineNumber : 2101
+Line       :     for ex in CFG.get("extras", []):                                # brows / lashes carry their own corre
+             ctive copies
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py.bak_anran
+LineNumber : 2324
+Line       : # face bone lists (shipped Rig: upperLips 5, lowerLips 5, cornerLips 2, noseList 3, cheeks 2, upper/lowerE
+             yelids 2, brows 7,
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py.bak_anran
+LineNumber : 2325
+Line       : # l/rUpper/LowerEyelid, faceBonesL/R/M = every transform under the head split by side). The mouth/face int
+             eractions move
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py.bak_anran
+LineNumber : 2332
+Line       :               "noseList": ["DEF-Nose.L", "DEF-Nose_Upper", "DEF-Nose.R"],
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py.bak_anran
+LineNumber : 2334
+Line       :               "upperEyelids": ["DEF-eyelid_top_02.l", "DEF-eyelid_top_02.r"],
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py.bak_anran
+LineNumber : 2335
+Line       :               "lowerEyelids": ["DEF-eyelid_bot_02.l", "DEF-eyelid_bot_02.r"],
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py.bak_anran
+LineNumber : 2336
+Line       :               "brows": ["DEF-Eyebrow_01.l", "DEF-Eyebrow_02.l", "DEF-Eyebrow_03.l", "DEF-Eyebrow_01.r", "D
+             EF-Eyebrow_02.r", "DEF-Eyebrow_03.r"]}
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py.bak_anran
+LineNumber : 2362
+Line       : rig_vals["faceBonesL"], rig_vals["faceBonesR"], rig_vals["faceBonesM"] = fb["L"], fb["R"], fb["M"]
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py.bak_anran
+LineNumber : 2363
+Line       : REPORT["rig_face_lists"] = {k: len(v) for k, v in rig_vals.items() if k in FACE_LISTS or k.startswith("fac
+             eBones")}
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py.bak_anran
+LineNumber : 2454
+Line       :     # Never listed: anatomy (hair, eyes, teeth, tongue, brows, lashes) and cfg crosswear_body_features.
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py.bak_anran
+LineNumber : 2456
+Line       :     _XW_ANATOMY_RX = _re.compile(r"^(body_.*|hair.*|eyes?|tongue|teeth.*|eyebrows?|eyelash(es)?|brows?|las
+             hes|mouth|scalp)$",
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py.bak_defhip
+             s
+LineNumber : 283
+Line       : STRIP_WET_RX = __import__("re").compile("|".join(_SW)) if _SW else None      # cfg proxy_budget.strip_wet:
+              material-name regexes that lose _ISWET_ON / _ISCOLORED_ON (hair strands, brows, lashes, LEDs, piercings,
+             nails)
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py.bak_defhip
+             s
+LineNumber : 708
+Line       :     _lash_brow = any(k in _tag for k in ("Eyelash", "Eyebrow", "Lashes", "Brows"))
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py.bak_defhip
+             s
+LineNumber : 709
+Line       :     if kind == "cutout" and _lash_brow and not _skin_like and CFG.get("lashes_brows_standard_advanced"):
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py.bak_defhip
+             s
+LineNumber : 710
+Line       :         # zero-loss plan D5-A2 (cfg lashes_brows_standard_advanced = {"queue": 3000, "color": [1, 1, 1, 1]
+             }): eyelashes + eyebrows like EVERY shipped character (akali / queen / asuna / irelia: StandardAdvanced Fa
+             de,
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py.bak_defhip
+             s
+LineNumber : 713
+Line       :         _ls = CFG["lashes_brows_standard_advanced"]
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py.bak_defhip
+             s
+LineNumber : 742
+Line       :         elif kind == "cutout":                                 # lashes / brows: Unified alpha clip (hair
+             profile)
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py.bak_defhip
+             s
+LineNumber : 2101
+Line       :     for ex in CFG.get("extras", []):                                # brows / lashes carry their own corre
+             ctive copies
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py.bak_defhip
+             s
+LineNumber : 2324
+Line       : # face bone lists (shipped Rig: upperLips 5, lowerLips 5, cornerLips 2, noseList 3, cheeks 2, upper/lowerE
+             yelids 2, brows 7,
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py.bak_defhip
+             s
+LineNumber : 2325
+Line       : # l/rUpper/LowerEyelid, faceBonesL/R/M = every transform under the head split by side). The mouth/face int
+             eractions move
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py.bak_defhip
+             s
+LineNumber : 2332
+Line       :               "noseList": ["DEF-Nose.L", "DEF-Nose_Upper", "DEF-Nose.R"],
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py.bak_defhip
+             s
+LineNumber : 2334
+Line       :               "upperEyelids": ["DEF-eyelid_top_02.l", "DEF-eyelid_top_02.r"],
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py.bak_defhip
+             s
+LineNumber : 2335
+Line       :               "lowerEyelids": ["DEF-eyelid_bot_02.l", "DEF-eyelid_bot_02.r"],
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py.bak_defhip
+             s
+LineNumber : 2336
+Line       :               "brows": ["DEF-Eyebrow_01.l", "DEF-Eyebrow_02.l", "DEF-Eyebrow_03.l", "DEF-Eyebrow_01.r", "D
+             EF-Eyebrow_02.r", "DEF-Eyebrow_03.r"]}
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py.bak_defhip
+             s
+LineNumber : 2362
+Line       : rig_vals["faceBonesL"], rig_vals["faceBonesR"], rig_vals["faceBonesM"] = fb["L"], fb["R"], fb["M"]
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py.bak_defhip
+             s
+LineNumber : 2363
+Line       : REPORT["rig_face_lists"] = {k: len(v) for k, v in rig_vals.items() if k in FACE_LISTS or k.startswith("fac
+             eBones")}
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py.bak_defhip
+             s
+LineNumber : 2454
+Line       :     # Never listed: anatomy (hair, eyes, teeth, tongue, brows, lashes) and cfg crosswear_body_features.
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py.bak_defhip
+             s
+LineNumber : 2456
+Line       :     _XW_ANATOMY_RX = _re.compile(r"^(body_.*|hair.*|eyes?|tongue|teeth.*|eyebrows?|eyelash(es)?|brows?|las
+             hes|mouth|scalp)$",
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\bundle_lash_fade.py
+LineNumber : 2
+Line       : """bundle_lash_fade - eyelashes / eyebrows from Unified dithered cutout to the shipped soft alpha blend (g
+             ap study #24, 2026-11-01).
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\bundle_lash_fade.py
+LineNumber : 4
+Line       :     py -3 bundle_lash_fade.py <in.tfa> <out.tfa> [--mats Shion_Eyelashes=3001,Shion_Eyebrows=3000]
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\bundle_lash_fade.py
+LineNumber : 5
+Line       :           [--ref D:/TFA/tfa-character-import-toolsets_v1.2/tfa-character-import-toolsets/_research/shipped
+             _lib/tifa/materials/M_TifaR_Brows.json] [--like Shion_EyeShadow]
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\bundle_lash_fade.py
+LineNumber : 7
+Line       : Shipped 8/8: lashes + brows = StandardAdvanced fade (_Mode 2, SrcBlend 5 / DstBlend 10, ZWrite 0, queue 30
+             00-3001, RenderType Transparent),
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\bundle_lash_fade.py
+LineNumber : 49
+Line       :     ap.add_argument("--mats", default="Shion_Eyelashes=3001,Shion_Eyebrows=3000")
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\bundle_lash_fade.py
+LineNumber : 50
+Line       :     ap.add_argument("--ref", default=_tfa_p("D:/TFA/tfa-character-import-toolsets_v1.2/tfa-character-impor
+             t-toolsets/_research/shipped_lib/tifa/materials/M_TifaR_Brows.json"))
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\check_stage.py
+LineNumber : 146
+Line       :     empty = [k for k in ("upperLips", "lowerLips", "upperEyelids", "lowerEyelids", "brows") if not fg.get(
+             k)]
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\check_stage.py
+LineNumber : 147
+Line       :     r.check("face groups filled", f"empty {empty}", not empty, "upperLips lowerLips upperEyelids lowerEyel
+             ids brows non-empty")
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\check_stage.py
+LineNumber : 254
+Line       :          "control visibly moves the right part (jaw opens, lips part, lids close fully, brows rise) with n
+             o torn or "
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\corpus_atlas_aggregate.py
+LineNumber : 668
+Line       :     if any(k in ln for k in ("brow",)) or fbx_parts & {"Eyebrows", "Brows", "Eyebrow"}:
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\corpus_atlas_aggregate.py
+LineNumber : 669
+Line       :         return "brows"
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\corpus_atlas_aggregate.py
+LineNumber : 871
+Line       :     if key in ("Eyes", "Tongue", "Teeth", "Mouth", "Eyelashes", "Eyebrows", "Brows", "Eyeshadow", "EyeShad
+             ow", "Eyewet"):
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\crosswear_bones.py
+LineNumber : 32
+Line       : ANATOMY_RX = re.compile(r"^(body_.*|hair.*|eyes?|tongue|teeth.*|eyebrows?|eyelash(es)?|brows?|lashes|mouth
+             |scalp)$", re.I)
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\crosswear_gate.py
+LineNumber : 18
+Line       :               unless it is anatomy (hair*, eyes, teeth*, tongue, brows, lashes, body_*) or listed in --bod
+             y-features /
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\crosswear_gate.py
+LineNumber : 44
+Line       : ANATOMY_RX = re.compile(r"^(body_.*|hair.*|eyes?|tongue|teeth.*|eyebrows?|eyelash(es)?|brows?|lashes|mouth
+             |scalp)$", re.I)
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\crosswear_hooks.py
+LineNumber : 35
+Line       :     # Never listed: anatomy (hair, eyes, teeth, tongue, brows, lashes) and cfg crosswear_body_features.
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\crosswear_hooks.py
+LineNumber : 37
+Line       :     _XW_ANATOMY_RX = _re.compile(r"^(body_.*|hair.*|eyes?|tongue|teeth.*|eyebrows?|eyelash(es)?|brows?|las
+             hes|mouth|scalp)$",
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\crosswear_om_sidecar.py
+LineNumber : 17
+Line       : BODY_RX = re.compile(r"^(body_.*|eyes?|tongue|tounge|teeth.*|teeths|eyelash(es)?|eyebrows?|brows?|mouth|la
+             shes|scalp|"
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\crosswear_skin_faces.py
+LineNumber : 27
+Line       : ANATOMY = re.compile(r"^(body_.*|hair.*|eyes?|tongue|teeth.*|eyebrows?|eyelash(es)?|brows?|lashes|mouth|sc
+             alp)$", re.I)
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\details_inventory_build.py
+LineNumber : 139
+Line       :     elif re.search(r"Eye|Teeth|Tongue|Decal_Head|Horns|Robotic_Head|Eyebrows|Eyelashes|Neck_Talk|IrisSize|
+             PupilSize", o) or \
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\face_lab.py
+LineNumber : 15
+Line       : lipsPress lipsPout tongueOut tongueSide tongueUp mouthWide; Brows rIn lIn rOut lOut; Cheeks r l; Nose r l;
+              EyelidL/R).
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\face_lab.py
+LineNumber : 65
+Line       : def E(name, mouth=None, brows=None, cheeks=None, nose=None, lids=(0.0, 0.0), src=""):
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\face_lab.py
+LineNumber : 66
+Line       :     return {"name": name, "mouth": mouth or [0.0] * 17, "brows": list(brows or [0, 0, 0, 0]) + [0] * (4 -
+             len(brows or [0, 0, 0, 0])),
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\face_lab.py
+LineNumber : 72
+Line       : # lowerLip -0.27..-1, cornerOut -0.81..+1, press +-1.2, pout 1-2, brows +-1, eyelid -0.35..1 (game clamps
+             to -0.07..1),
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\face_lab.py
+LineNumber : 106
+Line       :     E("brows_in_up", brows=[1, 1, 0, 0]), E("brows_in_dn", brows=[-1, -1, 0, 0]),
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\face_lab.py
+LineNumber : 107
+Line       :     E("brows_out_up", brows=[0, 0, 1, 1]), E("brows_out_dn", brows=[0, 0, -1, -1]),
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\face_lab.py
+LineNumber : 229
+Line       :        (6, 7): "CornerLipsInner", (3, 14): "InsideMouth", (5, 12): "UpperEyelids", (5, 11): "LowerEyelids"
+             ,
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\face_lab.py
+LineNumber : 230
+Line       :        (5, 13): "InnerBrows", (6, 13): "OuterBrows", (5, 5): "Jaw", (5, 4): "BelowJaw", (5, 10): "Cheeks",
+              (2, 15): "CheeksH",
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\face_lab.py
+LineNumber : 268
+Line       :     for nm in ("InnerBrows", "OuterBrows"):
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\face_lab.py
+LineNumber : 274
+Line       :         up = (reg == "UpperEyelids") & sel; lo = (reg == "LowerEyelids") & sel
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\face_lab.py
+LineNumber : 298
+Line       :                         "InnerBrows_l_y", "InnerBrows_r_y", "OuterBrows_l_y", "OuterBrows_r_y", "lid_gap_l
+             ", "lid_gap_r"):
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\face_lab.py
+LineNumber : 312
+Line       :             "d_Jaw_min_y_mm", "d_InnerBrows_l_y_mm", "d_OuterBrows_l_y_mm", "d_lid_gap_l_mm"]
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\face_lab.py
+LineNumber : 341
+Line       :         for e in EXPRS: print(e["name"], e["mouth"][:17], e["brows"], e["cheeks"], e["nose"], e["eyelidL"]
+             , e["eyelidR"], e["src"])
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\face_lab_py.py
+LineNumber : 47
+Line       : MOUTH, BROWS, EYELID_L, EYELID_R, CHEEKS, NOSE = 33, 34, 35, 36, 37, 38
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\face_lab_py.py
+LineNumber : 51
+Line       :          19: [(BROWS, 0, False), (BROWS, 1, False)], 21: [(BROWS, 2, False), (BROWS, 3, False)], 23: [(MOU
+             TH, 12, True)],
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\face_lab_py.py
+LineNumber : 54
+Line       : NVAL = {MOUTH: 17, BROWS: 4, CHEEKS: 2, NOSE: 2, EYELID_L: 1, EYELID_R: 1}
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\face_lab_py.py
+LineNumber : 386
+Line       :         setv(MOUTH, e.get("mouth")); setv(BROWS, e.get("brows")); setv(CHEEKS, e.get("cheeks")); setv(NOSE
+             , e.get("nose"))
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\face_metrics_compare.py
+LineNumber : 14
+Line       :         ("d_InnerBrows_l_y_mm", "iBrow"), ("d_OuterBrows_l_y_mm", "oBrow"), ("d_lid_gap_l_mm", "lid")]
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\head_regions.py
+LineNumber : 20
+Line       : CELL = {"Head": (0, 15), "Throat": (3, 15), "NeckBridge": (15, 15), "InsideMouth": (3, 14), "InnerBrows":
+             (5, 13),
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\head_regions.py
+LineNumber : 21
+Line       :         "OuterBrows": (6, 13), "UpperEyelids": (5, 12), "LowerEyelids": (5, 11), "Cheeks": (5, 10),
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\head_regions.py
+LineNumber : 131
+Line       :         reg[i] = "UpperEyelids" if w["lidU"][i] >= w["lidL"][i] else "LowerEyelids"
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\head_regions.py
+LineNumber : 133
+Line       :         reg[i] = "InnerBrows" if w["browI"][i] >= w["browO"][i] else "OuterBrows"
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\head_regions.py
+LineNumber : 144
+Line       :         reg[i] = "UpperEyelids" if HV[i][1] >= ec[1] else "LowerEyelids"
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\make_face_recipes.py
+LineNumber : 25
+Line       : Hb = {k: float(h(n)[1] - eye[1]) for k, n in b["brows_l"].items()}
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\make_face_recipes.py
+LineNumber : 72
+Line       :     "19": [mv(n, 0, -F["brow_inner"] * BROW_W["inner"][k] * Hb[k], 0) for side in ("brows_inner_l", "brows
+             _inner_r") for k, n in c[side].items()],
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\make_face_recipes.py
+LineNumber : 73
+Line       :     "21": [mv(n, 0, -F["brow_outer"] * BROW_W["outer"][k] * Hb[k], 0) for side in ("brows_outer_l", "brows
+             _outer_r") for k, n in c[side].items()],
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\make_face_recipes.py
+LineNumber : 104
+Line       :           "15": "cheeks", "17": "blink", "19": "innerBrows", "21": "outerBrows", "23": "pout", "25": "mout
+             hWide", "27": "press",
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\make_face_recipes.py.bak
+LineNumber : 25
+Line       : Hb = {k: float(h(n)[1] - eye[1]) for k, n in b["brows_l"].items()}
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\make_face_recipes.py.bak
+LineNumber : 72
+Line       :     "19": [mv(n, 0, -F["brow_inner"] * BROW_W["inner"][k] * Hb[k], 0) for side in ("brows_inner_l", "brows
+             _inner_r") for k, n in c[side].items()],
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\make_face_recipes.py.bak
+LineNumber : 73
+Line       :     "21": [mv(n, 0, -F["brow_outer"] * BROW_W["outer"][k] * Hb[k], 0) for side in ("brows_outer_l", "brows
+             _outer_r") for k, n in c[side].items()],
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\make_face_recipes.py.bak
+LineNumber : 104
+Line       :           "15": "cheeks", "17": "blink", "19": "innerBrows", "21": "outerBrows", "23": "pout", "25": "mout
+             hWide", "27": "press",
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\make_face_recipes_v2.py
+LineNumber : 10
+Line       :   * control values are linear and signed: the game's Lua uses jawDown -1..0 (open), cornerUp -1..+1, brows
+              -1..+3,
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\make_face_recipes_v2.py
+LineNumber : 74
+Line       : def brows(group, dy, dx_in, dz):
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\make_face_recipes_v2.py
+LineNumber : 77
+Line       :         for k, n in c[f"brows_{group}_{side}"].items():
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\make_face_recipes_v2.py
+LineNumber : 102
+Line       :     "19": brows("inner", -F["innerBrows"]["down"], F["innerBrows"]["inward"], F["innerBrows"].get("dz", 0.
+             0)),
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\make_face_recipes_v2.py
+LineNumber : 103
+Line       :     "21": brows("outer", -F["outerBrows"]["down"], F["outerBrows"].get("inward", 0.0), F["outerBrows"].get
+             ("dz", 0.0)),
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\make_face_recipes_v2.py
+LineNumber : 130
+Line       :           "15": "cheeks", "17": "blink", "19": "innerBrows", "21": "outerBrows", "23": "pout", "25": "mout
+             hWide", "27": "press",
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\own_body.py
+LineNumber : 24
+Line       :         "InnerBrows": (5, 13), "OuterBrows": (6, 13), "Breasts": (0, 12), "Vagina": (1, 12), "InsideVagina
+             ": (2, 12),
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\own_body.py
+LineNumber : 25
+Line       :         "InsideAnus": (3, 12), "UpperEyelids": (5, 12), "Ass": (0, 11), "Anus": (1, 11), "Fingers": (3, 11
+             ),
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\own_body.py
+LineNumber : 26
+Line       :         "LowerEyelids": (5, 11), "Hands": (0, 10), "Feet": (1, 10), "Nipples": (2, 10), "UpperLips": (4, 8
+             ),
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\own_body.py
+LineNumber : 321
+Line       :                 reg[i] = "UpperEyelids" if lidU[i] >= lidL[i] else "LowerEyelids"
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\own_body.py
+LineNumber : 323
+Line       :                 reg[i] = "InnerBrows" if brI[i] >= brO[i] else "OuterBrows"
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\own_body.py
+LineNumber : 335
+Line       :                     reg[i] = "UpperEyelids" if V[i][1] >= ec[1] else "LowerEyelids"
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\own_body.py
+LineNumber : 363
+Line       :                                   "CornerLipsInner", "UpperEyelids", "LowerEyelids"])
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\own_body.py.bak
+LineNumber : 24
+Line       :         "InnerBrows": (5, 13), "OuterBrows": (6, 13), "Breasts": (0, 12), "Vagina": (1, 12), "InsideVagina
+             ": (2, 12),
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\own_body.py.bak
+LineNumber : 25
+Line       :         "InsideAnus": (3, 12), "UpperEyelids": (5, 12), "Ass": (0, 11), "Anus": (1, 11), "Fingers": (3, 11
+             ),
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\own_body.py.bak
+LineNumber : 26
+Line       :         "LowerEyelids": (5, 11), "Hands": (0, 10), "Feet": (1, 10), "Nipples": (2, 10), "UpperLips": (4, 8
+             ),
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\own_body.py.bak
+LineNumber : 309
+Line       :                 reg[i] = "UpperEyelids" if lidU[i] >= lidL[i] else "LowerEyelids"
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\own_body.py.bak
+LineNumber : 311
+Line       :                 reg[i] = "InnerBrows" if brI[i] >= brO[i] else "OuterBrows"
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\own_body.py.bak
+LineNumber : 323
+Line       :                     reg[i] = "UpperEyelids" if V[i][1] >= ec[1] else "LowerEyelids"
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\own_body.py.bak
+LineNumber : 351
+Line       :                                   "CornerLipsInner", "UpperEyelids", "LowerEyelids"])
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\own_canonical_map.py
+LineNumber : 96
+Line       :         "Tongue": (2, 13), "Penis": (3, 13), "InnerBrows": (5, 13), "OuterBrows": (6, 13), "Breasts": (0,
+             12),
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\own_canonical_map.py
+LineNumber : 97
+Line       :         "Vagina": (1, 12), "InsideVagina": (2, 12), "InsideAnus": (3, 12), "UpperEyelids": (5, 12), "Ass":
+              (0, 11),
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\own_canonical_map.py
+LineNumber : 98
+Line       :         "Anus": (1, 11), "Fingers": (3, 11), "LowerEyelids": (5, 11), "Eyes": (6, 11), "Hands": (0, 10), "
+             Feet": (1, 10),
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\own_extras.py
+LineNumber : 2
+Line       : """Build the game meshes of the model's extra objects (eyes, teeth, tongue, hair, brows, lashes, horns, na
+             ils …) with
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\own_hair_colliders.py
+LineNumber : 127
+Line       :         if z.get("box"):                                               # world-space box filter [[x0,y0,z0
+             ],[x1,y1,z1]] (e.g. the forehead above the brows)
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\own_hair_locks.py
+LineNumber : 424
+Line       :     head child into faceBonesL/R/M at runtime anyway; references/23 section 8).
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\own_layers.py
+LineNumber : 61
+Line       :         "UpperEyelids", "LowerEyelids", "InnerBrows", "OuterBrows", "Jaw", "BelowJaw", "Nose", "L_Eye", "R
+             _Eye", "Ears"]
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\own_meshes.py
+LineNumber : 2
+Line       : """Build game meshes for the model's other objects (eyes, teeth, tongue, hair, brows, lashes, nails, outfi
+             ts …).
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\own_textures.py
+LineNumber : 31
+Line       : 0.5; hair 0.27) and coverage-preserving alpha mips in _MainTex.a and _TransparencyMap (REVIEW D19 aliased
+             lashes/brows).
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\own_textures.py
+LineNumber : 242
+Line       :         # alpha-tested surfaces (lashes, brows, hair cards, lace): colour under transparent texels = neare
+             st opaque
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\proof_regions.py
+LineNumber : 17
+Line       :        "UpperEyelids": (0, 200, 120), "LowerEyelids": (0, 140, 90), "InnerBrows": (120, 60, 200), "OuterBr
+             ows": (190, 120, 255),
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\rigid_items.py
+LineNumber : 3
+Line       : leak onto face bones (brows, jaw, ears), so a brow raise or a jaw opening bends a rigid object (review D14
+             : Shion's horns
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\rig_automap.py
+LineNumber : 69
+Line       :     ("upperEyelids", r"(eye)?lid.*(top|upper|up)"),
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\rig_automap.py
+LineNumber : 70
+Line       :     ("lowerEyelids", r"(eye)?lid.*(bot|lower|low)"),
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\rig_automap.py
+LineNumber : 71
+Line       :     ("brows", r"brow"),
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\rig_automap.py
+LineNumber : 73
+Line       :     ("noseList", r"nose|nostril"),
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\rig_automap.py
+LineNumber : 199
+Line       :     face["faceBonesL"], face["faceBonesR"], face["faceBonesM"] = sorted(fl), sorted(fr), sorted(fm)
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\rig_automap.py.bak
+LineNumber : 69
+Line       :     ("upperEyelids", r"(eye)?lid.*(top|upper|up)"),
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\rig_automap.py.bak
+LineNumber : 70
+Line       :     ("lowerEyelids", r"(eye)?lid.*(bot|lower|low)"),
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\rig_automap.py.bak
+LineNumber : 71
+Line       :     ("brows", r"brow"),
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\rig_automap.py.bak
+LineNumber : 73
+Line       :     ("noseList", r"nose|nostril"),
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\rig_automap.py.bak
+LineNumber : 199
+Line       :     face["faceBonesL"], face["faceBonesR"], face["faceBonesM"] = sorted(fl), sorted(fr), sorted(fm)
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\rig_automap.py.bak_breast
+LineNumber : 69
+Line       :     ("upperEyelids", r"(eye)?lid.*(top|upper|up)"),
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\rig_automap.py.bak_breast
+LineNumber : 70
+Line       :     ("lowerEyelids", r"(eye)?lid.*(bot|lower|low)"),
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\rig_automap.py.bak_breast
+LineNumber : 71
+Line       :     ("brows", r"brow"),
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\rig_automap.py.bak_breast
+LineNumber : 73
+Line       :     ("noseList", r"nose|nostril"),
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\rig_automap.py.bak_breast
+LineNumber : 199
+Line       :     face["faceBonesL"], face["faceBonesR"], face["faceBonesM"] = sorted(fl), sorted(fr), sorted(fm)
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\shipped_delta.py
+LineNumber : 273
+Line       :         for k in ("faceBonesL", "faceBonesR", "faceBonesM", "upperLips", "lowerLips", "cornerLips", "noseL
+             ist", "cheeks",
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\shipped_delta.py
+LineNumber : 274
+Line       :                   "upperEyelids", "lowerEyelids", "tongues", "brows", "m_ragdollIgnore", "m_rIgnoreCollide
+             rs"):
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\tfa_shipped_lib.py
+LineNumber : 48
+Line       : FACE_PARTS = ("Teeth", "Tongue", "Mouth", "Eyes", "Eyelashes", "Eyebrows", "Brows", "Eyebrow", "Eyeshadow"
+             , "EyeShadow",
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\tfa_validate.py
+LineNumber : 292
+Line       :                 "Teeth", "Tongue", "InnerBrows", "OuterBrows", "UpperEyelids", "LowerEyelids", "Eyes", "Up
+             perLips",
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\tfa_validate.py
+LineNumber : 410
+Line       :         lids = hist.get("UpperEyelids", 0) + hist.get("LowerEyelids", 0)
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\tfa_validate.py
+LineNumber : 413
+Line       :                    f"(lips/eyelids/brows/jaw) will not resolve (Rig.GetTriControlFromBoneWeight)")
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\voice_inbox.py
+LineNumber : 1242
+Line       :             f"in your browser and drop it into {root} (or {os.path.join(root, 'inbox')}), then run this ag
+             ain.")
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\audit\decal_gate.py
+LineNumber : 14
+Line       :   (pieces whose border is a designed edge in the model: LEDs, nails, brows - still checked for slip/alpha)
+              |
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\audit\decal_gate.py
+LineNumber : 37
+Line       : Hair cards, eye parts and mouth parts (cfg not_decals_rx, default eyebrows/eyelashes/eye*/hair*/teeth*/ton
+             gue, + list
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\audit\decal_gate.py
+LineNumber : 55
+Line       :             "not_decals_rx": r"^(eyebrows?|eyelash(es)?|brows?|lashes|eye.*|hair.*|teeth.*|tongue)$", "not
+             _decals": []}
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\audit\decal_gate.py
+LineNumber : 57
+Line       : EXPRS_DEFAULT = "rest,mood_smile,mood_surprised,mood_angry,mood_moan_open,eyes_closed,cheeks_up,brows_in_u
+             p,brows_out_up,jaw_open_100,bj_wide"
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\audit\face_follow.py
+LineNumber : 2
+Line       : """face_follow.py - do face-attached pieces (eyelashes, eyebrows, face decals) stay glued to the skin unde
+             r the game's face
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\audit\face_follow.py
+LineNumber : 5
+Line       :     py -3 face_follow.py <bundle.tfa> --pieces Eyelashes,Eyebrows [--after <dir with <piece>.npz, e.g. a s
+             kin_repair out>]
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\audit\face_follow.py
+LineNumber : 6
+Line       :           [--exprs eyes_closed,eyes_half,wink_l,mood_smile,mood_eyes_shut_smile,brows_in_up,brows_out_dn,c
+             heeks_up]
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\audit\face_follow.py
+LineNumber : 14
+Line       : * Gate (references/25 §8 D4): max slip <= 0.3 mm in every expression for decals; hair cards (lashes / bro
+             ws) the same
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\audit\face_follow.py
+LineNumber : 30
+Line       : EXPRS_DEFAULT = "eyes_closed,eyes_half,wink_l,mood_smile,mood_eyes_shut_smile,mood_surprised,brows_in_up,b
+             rows_out_dn,cheeks_up"
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\audit\face_follow.py
+LineNumber : 89
+Line       :     ap.add_argument("--pieces", default="Eyelashes,Eyebrows")
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\audit\geom_audit.py
+LineNumber : 24
+Line       :     "face": ["Head", "Face", "Cheeks", "Jaw", "BelowJaw", "InnerBrows", "OuterBrows"],
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\audit\geom_audit.py
+LineNumber : 28
+Line       :     "eyelids": ["UpperEyelids", "LowerEyelids"],
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\audit\lod_compare.py
+LineNumber : 47
+Line       :     out[np.isin(reg, ["Head", "Cheeks", "Jaw", "UpperLips", "LowerLips", "CornerLips", "UpperEyelids", "Lo
+             werEyelids",
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\audit\lod_compare.py
+LineNumber : 48
+Line       :                       "InnerBrows", "OuterBrows", "InsideMouth", "UpperLipsInner", "LowerLipsInner", "Corn
+             erLipsInner"])] = "head"
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\audit\mat_audit.py
+LineNumber : 8
+Line       : skin_head, eyes, teeth, tongue, hair, eyelashes, brows, cloth, cloth_transparent, cloth_skintight, metal_a
+             ccessory,
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\audit\skin_detail_compare.
+             py
+LineNumber : 18
+Line       : REG = {"face": ["Head", "Cheeks", "Jaw", "BelowJaw", "InnerBrows", "OuterBrows", "UpperEyelids", "LowerEye
+             lids", "UpperLips",
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\blender\author_face_pose.p
+             y
+LineNumber : 8
+Line       : 19 inner brows, 21 outer brows, 23 pout, 25 mouthWide, 27 press, 29 jawOut, 31 tongueOut, 33 tongueSide,
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\blender\author_face_pose.p
+             y
+LineNumber : 224
+Line       : SHAPE_MESHES = recipes.get("shape_meshes", ["Shion_Nude_Body", "Shion_Hair_Default_Eyebrows", "Shion_Hair_
+             Default_Eyelashes",
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\blender\author_face_pose.p
+             y.bak
+LineNumber : 8
+Line       : 19 inner brows, 21 outer brows, 23 pout, 25 mouthWide, 27 press, 29 jawOut, 31 tongueOut, 33 tongueSide,
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\blender\author_face_pose.p
+             y.bak
+LineNumber : 221
+Line       : SHAPE_MESHES = recipes.get("shape_meshes", ["Shion_Nude_Body", "Shion_Hair_Default_Eyebrows", "Shion_Hair_
+             Default_Eyelashes",
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\blender\author_face_pose.p
+             y.bak2
+LineNumber : 8
+Line       : 19 inner brows, 21 outer brows, 23 pout, 25 mouthWide, 27 press, 29 jawOut, 31 tongueOut, 33 tongueSide,
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\blender\author_face_pose.p
+             y.bak2
+LineNumber : 222
+Line       : SHAPE_MESHES = recipes.get("shape_meshes", ["Shion_Nude_Body", "Shion_Hair_Default_Eyebrows", "Shion_Hair_
+             Default_Eyelashes",
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\ingame_test\face_expr_scen
+             es.py
+LineNumber : 27
+Line       :    Brows({brows}),
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\ingame_test\face_expr_scen
+             es.py
+LineNumber : 54
+Line       :         open(p, "w").write(TEMPLATE.format(stem=a.stem, outfit=a.outfit, mouth=f(e["mouth"]), brows=f(e["b
+             rows"]), cheeks=f(e["cheeks"]),
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\ingame_test\TfaFit\Plugin.
+             cs
+LineNumber : 410
+Line       :             "^(body_.*|hair.*|eyes?|tongue|teeth.*|eyebrows?|eyelash(es)?|brows?|lashes|mouth|scalp)$",
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\ingame_test\TfaTestHarness
+             \Plugin.cs
+LineNumber : 1880
+Line       :                     // a BelowNormal game is starved by ANY Normal-priority program (VS Code, browser): fr
+             ames of 0.4-8 s, motion threads spinning (rig 12 min).
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\ingame_test\vanilla_smoke\
+             tfa_smoke_pose.lua.tmpl
+LineNumber : 47
+Line       :    Brows(),
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\jiggle\data\blender\class_
+             defaults.json
+LineNumber : 974
+Line       :    "faceBonesL",
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\jiggle\data\blender\class_
+             defaults.json
+LineNumber : 975
+Line       :    "faceBonesR",
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\jiggle\data\blender\class_
+             defaults.json
+LineNumber : 976
+Line       :    "faceBonesM",
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\jiggle\data\blender\class_
+             defaults.json
+LineNumber : 1004
+Line       :    "noseList",
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\jiggle\data\blender\class_
+             defaults.json
+LineNumber : 1006
+Line       :    "upperEyelids",
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\jiggle\data\blender\class_
+             defaults.json
+LineNumber : 1007
+Line       :    "lowerEyelids",
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\jiggle\data\blender\class_
+             defaults.json
+LineNumber : 1009
+Line       :    "brows",
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\jiggle\data\soft\class_def
+             aults.json
+LineNumber : 974
+Line       :    "faceBonesL",
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\jiggle\data\soft\class_def
+             aults.json
+LineNumber : 975
+Line       :    "faceBonesR",
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\jiggle\data\soft\class_def
+             aults.json
+LineNumber : 976
+Line       :    "faceBonesM",
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\jiggle\data\soft\class_def
+             aults.json
+LineNumber : 1004
+Line       :    "noseList",
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\jiggle\data\soft\class_def
+             aults.json
+LineNumber : 1006
+Line       :    "upperEyelids",
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\jiggle\data\soft\class_def
+             aults.json
+LineNumber : 1007
+Line       :    "lowerEyelids",
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\jiggle\data\soft\class_def
+             aults.json
+LineNumber : 1009
+Line       :    "brows",
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\modding\tfa_modcheck.py
+LineNumber : 26
+Line       : OM_BODY = re.compile(r"^(body_.*|eyes?|tongue|tounge|teeth ?|teeths|eyelash(es)?|eyelasher|eyeslasher|eyeb
+             rows?|brows?|"
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\research\fetch_sources.py
+LineNumber : 6
+Line       : One plain HTTP GET per URL with a normal browser User-Agent, `--delay` seconds between requests, no retrie
+             s against
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\research\fetch_sources.py
+LineNumber : 18
+Line       :                        r"Checking your browser|DDoS protection by", re.I)
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\review\rv_ab_stretch.py
+LineNumber : 39
+Line       :          (2, 13): "Tongue", (3, 13): "Penis", (5, 13): "InnerBrows", (6, 13): "OuterBrows", (0, 12): "Brea
+             sts",
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\review\rv_ab_stretch.py
+LineNumber : 40
+Line       :          (1, 12): "Vagina", (2, 12): "InsideVagina", (3, 12): "InsideAnus", (5, 12): "UpperEyelids", (0, 1
+             1): "Ass",
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\review\rv_ab_stretch.py
+LineNumber : 41
+Line       :          (1, 11): "Anus", (3, 11): "Fingers", (5, 11): "LowerEyelids", (6, 11): "Eyes", (0, 10): "Hands",
+             (1, 10): "Feet",
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\review\rv_texel.py
+LineNumber : 35
+Line       : GROUPS = {"face(head+lips+lids+brows+cheeks)": ["Head", "UpperLips", "LowerLips", "CornerLips", "UpperEyel
+             ids", "LowerEyelids",
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\review\rv_texel.py
+LineNumber : 36
+Line       :                                                   "InnerBrows", "OuterBrows", "Cheeks", "Jaw", "BelowJaw",
+              "Lips"],
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\review\rv_texel.py
+LineNumber : 37
+Line       :           "lips": ["UpperLips", "LowerLips", "CornerLips"], "eyelids": ["UpperEyelids", "LowerEyelids"],
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\unity_lab\TfaFaceLab.cs
+LineNumber : 60
+Line       :     [Serializable] public class Expr { public string name; public float[] mouth; public float[] brows; pub
+             lic float[] cheeks; public float[] nose; public float eyelidL; public float eyelidR; }
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\unity_lab\TfaFaceLab.cs
+LineNumber : 88
+Line       :     const int MOUTH = 33, BROWS = 34, EYELID_L = 35, EYELID_R = 36, CHEEKS = 37, NOSE = 38;
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\unity_lab\TfaFaceLab.cs
+LineNumber : 101
+Line       :         {19, new[]{(BROWS,0,false),(BROWS,1,false)}},       // r/lBrowInside (-)
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\unity_lab\TfaFaceLab.cs
+LineNumber : 102
+Line       :         {21, new[]{(BROWS,2,false),(BROWS,3,false)}},       // r/lBrowOutside (-)
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\unity_lab\TfaFaceLab.cs
+LineNumber : 111
+Line       :     static int ValueCount(int c) => c == MOUTH ? 17 : c == BROWS ? 4 : (c == CHEEKS || c == NOSE) ? 2 : 1;
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\unity_lab\TfaFaceLab.cs
+LineNumber : 228
+Line       :         Set(MOUTH, e.mouth); Set(BROWS, e.brows); Set(CHEEKS, e.cheeks); Set(NOSE, e.nose);
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\unity_lab\TfaLabStdAdv.sha
+             der
+LineNumber : 4
+Line       : // ZWrite Off, queue Transparent. Used for lashes, brows, cornea/wet films and glows.
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\vendor\own\face_v2\face_di
+             ff_sheet.py
+LineNumber : 11
+Line       : FEATURES = {"forehead_gem_horns": (110, 0, 230, 80), "brows": (35, 92, 285, 135), "eyes": (35, 112, 285, 1
+             68),
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\vendor\own\perf_study\scri
+             pts\sq_inventory.py
+LineNumber : 36
+Line       :     "face": ["Head", "Face", "Cheeks", "Jaw", "BelowJaw", "InnerBrows", "OuterBrows"],
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\vendor\own\perf_study\scri
+             pts\sq_inventory.py
+LineNumber : 40
+Line       :     "eyelids": ["UpperEyelids", "LowerEyelids"],
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\vendor\own\perf_study\scri
+             pts\sq_tables.py
+LineNumber : 213
+Line       :              "hair": "hair", "face_part": "eyes / teeth / tongue / lashes / brows", "other": "other / unre
+             ferenced"}
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\vendor\own\perf_study\scri
+             pts\sq_tables_extra.py
+LineNumber : 48
+Line       :         g = {"eyes": [0, 0], "teeth": [0, 0], "tongue": [0, 0], "lashes": [0, 0], "brows": [0, 0], "hair":
+              [0, 0]}
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\vendor\own\perf_study\scri
+             pts\sq_tables_extra.py
+LineNumber : 56
+Line       :             elif "brow" in n: k = "brows"
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\vendor\own\perf_study\scri
+             pts\sq_tables_extra.py
+LineNumber : 70
+Line       :     return md_table(["character (vertices / triangles)", "eyes", "teeth", "tongue", "lashes", "brows", "ha
+             ir", "head skin verts", "head skin tris"], rows)
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\vendor\proof\gap_study\fac
+             e\expr_compare.py
+LineNumber : 22
+Line       :       ('corner_up_100', 'corner_l_dy_mm'), ('mood_sad', 'corner_l_dy_mm'), ('mood_surprised', 'd_OuterBrow
+             s_l_y_mm'),
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\vendor\proof\gap_study\fac
+             e\expr_compare.py
+LineNumber : 23
+Line       :       ('mood_angry', 'd_OuterBrows_l_y_mm'), ('mood_sad', 'd_OuterBrows_l_y_mm'), ('mood_angry', 'd_InnerB
+             rows_l_y_mm'),
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\vendor\proof\gap_study\fac
+             e\expr_compare.py
+LineNumber : 24
+Line       :       ('mood_sad', 'd_InnerBrows_l_y_mm'), ('brows_out_up', 'd_OuterBrows_l_y_mm'), ('brows_in_up', 'd_Inn
+             erBrows_l_y_mm'),
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\vendor\proof\gap_study\fac
+             e\face_inventory.py
+LineNumber : 16
+Line       :        (13, 2): 'Tongue13', (13, 3): 'Penis', (13, 5): 'InnerBrows', (13, 6): 'OuterBrows', (12, 0): 'Brea
+             sts', (12, 1): 'Vagina',
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\vendor\proof\gap_study\fac
+             e\face_inventory.py
+LineNumber : 17
+Line       :        (12, 2): 'InsideVagina', (12, 3): 'InsideAnus', (12, 5): 'UpperEyelids', (11, 0): 'Ass', (11, 1): '
+             Anus', (11, 3): 'Fingers',
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\vendor\proof\gap_study\fac
+             e\face_inventory.py
+LineNumber : 18
+Line       :        (11, 5): 'LowerEyelids', (11, 6): 'Eyes', (10, 0): 'Hands', (10, 1): 'Feet', (10, 2): 'Nipples', (1
+             0, 5): 'Cheeks',
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\vendor\proof\gap_study\fac
+             e\face_inventory.py
+LineNumber : 22
+Line       : DETAIL = {'UpperEyelids', 'LowerEyelids', 'InnerBrows', 'OuterBrows', 'UpperLips', 'LowerLips', 'CornerLip
+             s', 'UpperLipsInner',
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\vendor\proof\gap_study\fac
+             e\face_inventory.py
+LineNumber : 25
+Line       :          15: 'Cheeks', 17: 'Eyelid(blink)', 19: 'BrowsIn(-)', 21: 'BrowsOut(-)', 23: 'lipsPout', 25: 'mout
+             hWide(-)',
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\vendor\resume\chain_v6.py
+LineNumber : 71
+Line       :     but only 11 GB of commit were left (rig game + clip-fix solve + browsers) -> MemoryError on a 44 MB re
+             ad of the lines gate."""
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\vendor\resume\queue_c39.py
+LineNumber : 2228
+Line       : # bare-region sets) + candidate D features switched on by m21f3_inputs/OPTS.json after their proof {"t2c":
+              bool, "bone_trim": bool, "lashes_brows_sa": bool}. One heavy job at a time: the check waits for m21f2's g
+             ates.
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\vendor\resume\queue_c39.py
+LineNumber : 2240
+Line       :     return {k: bool(o.get(k)) for k in ("t2c", "bone_trim", "lashes_brows_sa", "bc4_scalars", "hair_v4c")}
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\vendor\resume\queue_c39.py
+LineNumber : 2264
+Line       :     if opts["lashes_brows_sa"]:
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\vendor\resume\queue_c39.py
+LineNumber : 2265
+Line       :         patch["set"]["lashes_brows_standard_advanced"] = {"queue": 3000}
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\__pycache__\assemble_own.c
+             python-312.pyc
+LineNumber : 638
+Line       : y�wrgrr�s  �rDr�z␦mat_for.<locals>.<genexpr>�s�����R�(Q�1�Q�$�Y�(Q�r�
+             )�Eyelash�Eyebrow�Lashes�Brows�cutout�lashes_brows_standard_advanced)r�r�r�r�r�r�
+             r`rar[rZr�r^r]rb�color)r�rrG�unified)r��eye�hair�tonguer�
+             �teeth)r��r�)rrr}r�g@�333333�?)rbrar^r}�material_lint_fixesr
+             rprb)r�r�@)rbrar��333333�?rw)�_IS_HAIR_SPECULARrbr[ra)r�
+             r[r��
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\__pycache__\assemble_own.c
+             python-312.pyc
+LineNumber : 1054
+Line       : cornerLipsnoseList�cheeks�
+                                       upperEyelids�
+                                                    lowerEyelids�brows))�
+                                                                         lUpperEyelidzL_Upper_Eyelid++r_)
+             �
+              rUpperEyelidzR_Upper_Eyelid++r`)�
+                                               lLowerEyelidzL_Lower_Eyelid++ra)�
+                                                                                rLowerEyelidzR_Lower_Eyel
+             id++rbc�n�tj|�}|r|dk(rytj
+             |�}|r�y)NrTF)�_parrB)r�rCs  rD�
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\__pycache__\assemble_own.c
+             python-312.pyc
+LineNumber : 1058
+Line       : faceBonesL�
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\__pycache__\assemble_own.c
+             python-312.pyc
+LineNumber : 1059
+Line       : faceBonesR�
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\__pycache__\assemble_own.c
+             python-312.pyc
+LineNumber : 1060
+Line       : faceBonesM�        faceBones�rig_face_lists�hips�spine�chestrD�head�       lUpperArmlForearm�lHand�       rUpperAr
+             mrForearm�rHand�lThigh�lCalf�lFootr��rThighr��rCalfr��rFootr�)�lBreast�rBreast�lA
+             ss�rAss)r#r)r#�muscles�spine2�spine3�spine4�head_CCrrlCalf_CCrCalf_CCrr
+             rrr�r��
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\__pycache__\assemble_own.c
+             python-312.pyc
+LineNumber : 1089
+Line       : eyelid_bot�
+                        tongueNamesr��  browNames�eyebrow�m_nonClothingAnims)r��extra_clothing_nameszX^(body_
+             .*|hair.*|eyes?|tongue|teeth.*|eyebrows?|eyelash(es)?|brows?|lashes|mouth|scalp)$�crosswear_all_accessori
+             es�m_extraClothingNamesr��crosswear_keep_slotsr2�crosswear_extra_clothing_namesrP�m_clothingC
+             loths�voice�       voice_dirr��own�        voice_src�
+                                                                  m_voiceLines�m_music�
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\__pycache__\check_stage.cp
+             ython-312.pyc
+LineNumber : 73
+Line       : w)Nr��issueszrig_automap issuesrrz0 (list printed below)��issue�slotszrequired Rig
+             slots mapped�/z     missing zall 17�
+                                                 face_groups)�  upperLips�      lowerLips�
+                                                                                          upperEyelids�
+                                                                                                       lowerEyelids�brows
+             zface groups filledzempty z=upperLips lowerLips upperEyelids lowerEyelids brows non-empty)rmryrF
+             r�r�rX�SLOTS)
+                          r|r�r^�mpr��ir��srQ�fgrz�emptys
+                                                                     r?�
+             s0mapr��sD��
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\__pycache__\check_stage.cp
+             ython-312.pyc
+LineNumber : 179
+Line       : �|jd
+                 �y)
+                    Nr�zface_pose_sim.jsonr,zFace_Pose framesrz#37
+              (frame 0 rest + 18 controls x 2)r7zcontrols authoredrz>= 18a0expressions: after S17 look at t
+             he in-game face batch contact sheet (face/batch.json shots): acceptable = every control visibly moves the
+             right part (jaw opens, lips part, lids close fully, brows rise) with no torn or spiky vertices; compare si
+             de by side with the same expression on an official characterrmrjrPr�r�ryrFrU)r|
+             r�r^�fp�n�ncs      r?�s4rO�s���
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\__pycache__\own_body.cpyth
+             on-312.pyc
+LineNumber : 27
+Line       : InnerBrows)r
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\__pycache__\own_body.cpyth
+             on-312.pyc
+LineNumber : 29
+Line       : OuterBrows)�r�Breasts)r�
+                                     �Vagina)r�
+                                               InsideVagina)rr�
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\__pycache__\own_body.cpyth
+             on-312.pyc
+LineNumber : 31
+Line       : r�
+               UpperEyelids)r
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\__pycache__\own_body.cpyth
+             on-312.pyc
+LineNumber : 33
+Line       : r"�
+                LowerEyelids)r
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\__pycache__\own_hair_locks
+             .cpython-312.pyc
+LineNumber : 274
+Line       :     head child into faceBonesL/R/M at runtime anyway; references/23 section 8).
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\__pycache__\own_meshes.cpy
+             thon-312.pyc
+LineNumber : 5
+Line       : Gd�de�Z
+                    y)u"Build game meshes for the model's other objects (eyes, teeth, tongue, hai
+             r, brows, lashes, nails, outfits …).
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\__pycache__\rigid_items.cp
+             ython-312.pyc
+LineNumber : 10
+Line       : leak onto face bones (brows, jaw, ears), so a brow raise or a jaw opening bends a rigid object (review D14
+             : Shion's horns
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\__pycache__\rig_automap.cp
+             ython-312.pyc
+LineNumber : 30
+Line       : cornerLipsz7lip.*corner|corner.*lip|lipssmile|mouthcorner|lipcorner)�
+                                                                                  upperEyelidsz(eye)?lid.*(top|upper
+             |up))�
+                   lowerEyelidsz␦(eye)?lid.*(bot|lower|low))�brows�brow)�cheeks�cheek)noseListz
+                                                                                               nose|nostril
+             )�tongues�tonguec
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\__pycache__\rig_automap.cp
+             ython-312.pyc
+LineNumber : 102
+Line       : faceBonesL�
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\__pycache__\rig_automap.cp
+             ython-312.pyc
+LineNumber : 103
+Line       : faceBonesR�
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\__pycache__\rig_automap.cp
+             ython-312.pyc
+LineNumber : 104
+Line       : faceBonesMc�
+                         �|dS)Nr
+                                rPrQs rrSzmain.<locals>.<lambda>
+             �s
+               ��PQ�RX�PYrz
+
+
+
+PS D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets>
+PS D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets> Write-Host "`n===== FACE CONTROL CLIP GENERATION =====" -ForegroundColor Cyan
+
+===== FACE CONTROL CLIP GENERATION =====
+PS D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets>
+PS D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets> Get-ChildItem "$ROOT\scripts" -Recurse -File |
+>>     Select-String -Pattern "face_control_clips|face_pose_bones|face_pose_shape_curves" |
+>>     Select-Object Path, LineNumber, Line |
+>>     Format-List
+
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py
+LineNumber : 2108
+Line       : REPORT["checks"]["face_pose_bones"] = len(face_bones); REPORT["checks"]["face_pose_moving_bones"] = moving
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py
+LineNumber : 2126
+Line       :     REPORT["checks"]["face_pose_shape_curves"] = len(face_flt)
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py
+LineNumber : 2140
+Line       : # the game's standard face-CONTROL clips (identical in every shipped character, data/face_control_clips.js
+             on from
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py
+LineNumber : 2141
+Line       : # extract_face_control_clips.py): blowjob mouth presets, lip-sync visemes, swallow, tongue-out, eye shots,
+              base faces.
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py
+LineNumber : 2143
+Line       : FCC = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data", "face_control_clips.json")
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py
+LineNumber : 2144
+Line       : if CFG.get("face_control_clips", True) and os.path.isfile(FCC):
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py
+LineNumber : 2158
+Line       :     REPORT["face_control_clips"] = len(json.load(open(FCC))["clips"]) - 1
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py.bak_anran
+LineNumber : 2088
+Line       : REPORT["checks"]["face_pose_bones"] = len(face_bones); REPORT["checks"]["face_pose_moving_bones"] = moving
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py.bak_anran
+LineNumber : 2106
+Line       :     REPORT["checks"]["face_pose_shape_curves"] = len(face_flt)
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py.bak_anran
+LineNumber : 2120
+Line       : # the game's standard face-CONTROL clips (identical in every shipped character, data/face_control_clips.js
+             on from
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py.bak_anran
+LineNumber : 2121
+Line       : # extract_face_control_clips.py): blowjob mouth presets, lip-sync visemes, swallow, tongue-out, eye shots,
+              base faces.
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py.bak_anran
+LineNumber : 2123
+Line       : FCC = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data", "face_control_clips.json")
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py.bak_anran
+LineNumber : 2124
+Line       : if CFG.get("face_control_clips", True) and os.path.isfile(FCC):
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py.bak_anran
+LineNumber : 2138
+Line       :     REPORT["face_control_clips"] = len(json.load(open(FCC))["clips"]) - 1
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py.bak_defhip
+             s
+LineNumber : 2088
+Line       : REPORT["checks"]["face_pose_bones"] = len(face_bones); REPORT["checks"]["face_pose_moving_bones"] = moving
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py.bak_defhip
+             s
+LineNumber : 2106
+Line       :     REPORT["checks"]["face_pose_shape_curves"] = len(face_flt)
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py.bak_defhip
+             s
+LineNumber : 2120
+Line       : # the game's standard face-CONTROL clips (identical in every shipped character, data/face_control_clips.js
+             on from
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py.bak_defhip
+             s
+LineNumber : 2121
+Line       : # extract_face_control_clips.py): blowjob mouth presets, lip-sync visemes, swallow, tongue-out, eye shots,
+              base faces.
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py.bak_defhip
+             s
+LineNumber : 2123
+Line       : FCC = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data", "face_control_clips.json")
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py.bak_defhip
+             s
+LineNumber : 2124
+Line       : if CFG.get("face_control_clips", True) and os.path.isfile(FCC):
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\assemble_own.py.bak_defhip
+             s
+LineNumber : 2138
+Line       :     REPORT["face_control_clips"] = len(json.load(open(FCC))["clips"]) - 1
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\bulk_import.py
+LineNumber : 108
+Line       :                  "cloth_max_tris_per_vertex": 15, "cloth_max_weights": 15, "penis_cloth_colliders": 7, "fa
+             ce_control_clips": 29},
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\bulk_import.py
+LineNumber : 147
+Line       :     add("face_control_clips", r.get("face_control_clips"), r.get("face_control_clips") == th["face_control
+             _clips"], th["face_control_clips"])
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\extract_face_control_clips
+             .py
+LineNumber : 4
+Line       :     py -3 extract_face_control_clips.py <Mods/Characters dir> <out.json> [--n 8]
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\toolkit_setup.py
+LineNumber : 31
+Line       :              "girl_systems_callseq.json", "face_control_clips.json", "cloth_param_profiles.json", "feature
+             _matrix.json",
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\__pycache__\assemble_own.c
+             python-312.pyc
+LineNumber : 1013
+Line       : �s�AA�face_pose_frame0_vs_skeleton_mmr�����ư>)r�r^�face_pose_bones�face_pose_moving_bo
+             nes�
+                 shape_framesc
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\__pycache__\assemble_own.c
+             python-312.pyc
+LineNumber : 1018
+Line       : z  FBX/Body_�
+                          keys_objectzFBX/�face_pose_shape_curves�      Face_Pose)r��
+                                                                                     Face_Riggingrn�Tposec
+             �d�ttd|�td|�g�d|dtd�
+             dd�S)Nr���?�
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\__pycache__\assemble_own.c
+             python-312.pyc
+LineNumber : 1020
+Line       : �Customize_Penisz
+                              Holes/Vaginarzface_control_clips.json�face_control_clips�clipsr�r�r�r�
+             r�r�r�r�r�r�r�r�rSc
+                                ���t|�tr
+             t|�dgngz}tt|�D��cgc]\}}t   |d
+             z
+              t
+               |����c}}�|||t
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\__pycache__\bulk_import.cp
+             ython-312.pyc
+LineNumber : 55
+Line       : allow.json)
+                        �stage2�bodyassemble�
+                                             face_profile�presets�      bake_jobs�futa_asset_spec�futa_asset_map�f
+             uta_asset_blend�allow�ingame_batchesg{�G�z�?g�������?g��&�
+                                                                       .>���)�skeleton_max_world_err
+             _mm�face_pose_frame0_vs_skeleton_mm�cloth_rest_err_m�cloth_max_tris_per_vertex�cloth_max_weights�peni
+             s_cloth_colliders�face_control_clips�allowed_errors)z^Body_ _base bind poses deviatez^standard patche
+             s wrongz@^Colliders/Body collision vertex vs mapped Body_ vertex distance)
+                                                                                       z^m_Tag$z        ^m_Layer$z
+                                                                                                                  ^m_IsActi
+             ve$z
+                 ^m_Enabled$z^cullRendererListz
+
+Path       : D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets\scripts\__pycache__\toolkit_setup.
+             cpython-312.pyc
+LineNumber : 15
+Line       : )
+              �class_defaults.json�tandard_base_skeleton.jsonzame_shader_properties.jsonzgame_string_lookups.
+             jsonzgirl_systems_callseq.jsonzface_control_clips.jsonzcloth_param_profiles.jsonzfeature_matrix.jsonz
+             body_region_atlas.jsonzbase_body_weight_research.jsonzcorpus_full/index.json�game folder (GameAssembly.
+             dll)�game: Mods/Characters)�S10�S11�S12�signoff)�rights_confirmed�licence�adult_confirmed�adult
+             _evidence� signed_by�CFG�stem�
+                                           display_namerig_typearmature�
+                                                                        body_object�
+                                                                                    face_object�
+                                                                                                outfit_slot
+             s�futa�S0.dump�
+                            model_blend�blender�S0.mapr�S1�S2r�S3�S4r�S5r �S6�S7�S8r
+             �S9rrr�voice�      voice_dir�S13game_dir�clean_game_dirr␦�rig_dir)�S14�S15�S16�S17
+             �BENCH�REVIEWc�:�tj}d|vrd|�d�S|S)zYhow
+              to start Python in printed commands: the interpreter running now (works on every OS).� �")�sys�
+
+
+
+PS D:\TFA\tfa-character-import-toolsets_v1.2\tfa-character-import-toolsets>
